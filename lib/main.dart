@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Tour Details'),
     );
   }
 }
@@ -97,6 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 textStyle: const TextStyle(fontSize: 20),
                 backgroundColor: Colors.white,
                 side: const BorderSide(color: Colors.orange, width: 3),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // <-- Radius
+                ),
                 //    minimumSize: const Size(double.infinity, double.infinity),
               ),
               onPressed: () {},
@@ -119,7 +122,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     textStyle: const TextStyle(fontSize: 20),
                     backgroundColor: Colors.white,
                     side: const BorderSide(color: Colors.orange, width: 3),
-                    //    minimumSize: const Size(double.infinity, double.infinity),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12), // <-- Radius
+                    ),
                   ),
                   onPressed: () {},
                   label: Text(
