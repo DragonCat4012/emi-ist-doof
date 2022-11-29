@@ -53,12 +53,33 @@ class _MyHomePageState extends State<MyHomePage> {
               'Highlight Tour',
               style: Theme.of(context).textTheme.headline4,
             ),
+
             const Text(
               'Do irure ullamco labore elit occaecat et deserunt deserunt occaecat proident ea aliquip. Sunt sunt Lorem nisi irure sunt consequat adipisicing Lorem dolor duis. Nisi minim velit sunt do eiusmod qui aute exercitation laboris aliqua consectetur. Dolore pariatur excepteur eu fugiat aliqua sunt proident mollit labore. Laboris do deserunt nostrud et consectetur aute ullamco veniam sunt elit minim quis. Labore do sit eiusmod Lorem incididunt et non elit do. Velit ex dolor magna sint dolore Lorem sunt labore cupidatat excepteur cillum.',
             ),
-            Text(
-              'Gebäude: $_counter\nSammlung: hh\nDauer: 1 Stunde',
+
+            RichText(
+              text: TextSpan(
+                style: new TextStyle(
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  new TextSpan(
+                      text: '\nGebäude: ',
+                      style: new TextStyle(fontWeight: FontWeight.bold)),
+                  new TextSpan(text: 'Semperbau'),
+                  new TextSpan(
+                      text: '\nSammlung: ',
+                      style: new TextStyle(fontWeight: FontWeight.bold)),
+                  new TextSpan(text: 'Gemäldegalerie Alte Meister'),
+                  new TextSpan(
+                      text: '\nDauer: ',
+                      style: new TextStyle(fontWeight: FontWeight.bold)),
+                  new TextSpan(text: '1 Stunde'),
+                ],
+              ),
             ),
+
             ElevatedButton.icon(
               icon: Icon(
                 Icons.signpost_outlined,
