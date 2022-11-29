@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tour Details',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -49,13 +49,35 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             Text(
-              '$_counter',
+              'Highlight Tour',
               style: Theme.of(context).textTheme.headline4,
             ),
+            const Text(
+              'Do irure ullamco labore elit occaecat et deserunt deserunt occaecat proident ea aliquip. Sunt sunt Lorem nisi irure sunt consequat adipisicing Lorem dolor duis. Nisi minim velit sunt do eiusmod qui aute exercitation laboris aliqua consectetur. Dolore pariatur excepteur eu fugiat aliqua sunt proident mollit labore. Laboris do deserunt nostrud et consectetur aute ullamco veniam sunt elit minim quis. Labore do sit eiusmod Lorem incididunt et non elit do. Velit ex dolor magna sint dolore Lorem sunt labore cupidatat excepteur cillum.',
+            ),
+            Text(
+              'Gebäude: $_counter\nSammlung: hh\nDauer: 1 Stunde',
+            ),
+            ElevatedButton.icon(
+              icon: Icon(
+                Icons.signpost_outlined,
+                color: Colors.orange,
+                size: 30.0,
+              ),
+              style: ElevatedButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+                backgroundColor: Colors.white,
+                side: BorderSide(color: Colors.orange, width: 3),
+              ),
+              onPressed: () {},
+              label: Text(
+                'Tour Starten',
+                style: TextStyle(color: Colors.orange),
+              ),
+            ),
+
+            //
           ],
         ),
       ),
