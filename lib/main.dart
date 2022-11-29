@@ -32,6 +32,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // ignore: unused_field
   int _counter = 0;
+  var arr = [
+    "Herzlich Wilkommen",
+    "Sixtinische Madonna",
+    "Das Schokoladenmädchen",
+    "Wegbeschreibung 1"
+  ];
 
   void _incrementCounter() {
     setState(() {
@@ -43,74 +49,90 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
+        leading: const Icon(Icons.menu),
         title: Text(widget.title),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Highlight Tour',
+              style: Theme.of(context).textTheme.headline4,
+            ),
 
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Highlight Tour',
-                style: Theme.of(context).textTheme.headline4,
+            RichText(
+              text: const TextSpan(
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                      text:
+                          'Incididunt eiusmod aute occaecat velit ad proident ea consequat. Non nisi eiusmod non voluptate sunt exercitation eu. Tempor enim dolor cillum voluptate ad ullamco do Lorem mollit. Quis aliqua irure ipsum aliquip et proident et incididunt. Est anim exercitation ex quis sunt enim veniam dolor ut in consequat ea adipisicing aliquip.'),
+                  TextSpan(
+                      text: '\n\nGebäude: ',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'Semperbau'),
+                  TextSpan(
+                      text: '\nSammlung: ',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'Gemäldegalerie Alte Meister'),
+                  TextSpan(
+                      text: '\nDauer: ',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: '1 Stunde'),
+                ],
               ),
+            ),
 
-              RichText(
-                text: TextSpan(
-                  style: new TextStyle(
-                    color: Colors.black,
+            ElevatedButton.icon(
+              icon: const Icon(
+                Icons.signpost_outlined,
+                color: Colors.orange,
+                size: 30.0,
+              ),
+              style: ElevatedButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+                backgroundColor: Colors.white,
+                side: const BorderSide(color: Colors.orange, width: 3),
+                //    minimumSize: const Size(double.infinity, double.infinity),
+              ),
+              onPressed: () {},
+              label: const Text(
+                'Tour Starten',
+                style: TextStyle(color: Colors.orange),
+              ),
+            ),
+
+            for (var item in arr)
+              Container(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  icon: const Icon(
+                    Icons.signpost_outlined,
+                    color: Colors.orange,
+                    size: 30.0,
                   ),
-                  children: <TextSpan>[
-                    new TextSpan(
-                        text:
-                            'Incididunt eiusmod aute occaecat velit ad proident ea consequat. Non nisi eiusmod non voluptate sunt exercitation eu. Tempor enim dolor cillum voluptate ad ullamco do Lorem mollit. Quis aliqua irure ipsum aliquip et proident et incididunt. Est anim exercitation ex quis sunt enim veniam dolor ut in consequat ea adipisicing aliquip.'),
-                    new TextSpan(
-                        text: '\n\nGebäude: ',
-                        style: new TextStyle(fontWeight: FontWeight.bold)),
-                    new TextSpan(text: 'Semperbau'),
-                    new TextSpan(
-                        text: '\nSammlung: ',
-                        style: new TextStyle(fontWeight: FontWeight.bold)),
-                    new TextSpan(text: 'Gemäldegalerie Alte Meister'),
-                    new TextSpan(
-                        text: '\nDauer: ',
-                        style: new TextStyle(fontWeight: FontWeight.bold)),
-                    new TextSpan(text: '1 Stunde'),
-                  ],
+                  style: ElevatedButton.styleFrom(
+                    textStyle: const TextStyle(fontSize: 20),
+                    backgroundColor: Colors.white,
+                    side: const BorderSide(color: Colors.orange, width: 3),
+                    //    minimumSize: const Size(double.infinity, double.infinity),
+                  ),
+                  onPressed: () {},
+                  label: Text(
+                    item,
+                    style: const TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
 
-              ElevatedButton.icon(
-                icon: Icon(
-                  Icons.signpost_outlined,
-                  color: Colors.orange,
-                  size: 30.0,
-                ),
-                style: ElevatedButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 20),
-                  backgroundColor: Colors.white,
-                  side: BorderSide(color: Colors.orange, width: 3),
-                ),
-                onPressed: () {},
-                label: Text(
-                  'Tour Starten',
-                  style: TextStyle(color: Colors.orange),
-                ),
-              ),
-
-              //
-            ],
-          ),
+            //
+          ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
