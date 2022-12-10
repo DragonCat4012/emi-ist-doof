@@ -1,8 +1,8 @@
 # emi_uebung_3
 
 
-![help](https://media.discordapp.net/attachments/665184192350650381/1047190574207336458/image.png?width=259&height=590)
-A new Flutter project.
+![help](https://media.discordapp.net/attachments/819922260424785920/1051220179826245652/image.png?width=421&height=903)
+
 
 ## Getting Started
 
