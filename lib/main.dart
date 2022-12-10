@@ -102,18 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             for (var item in arr)
-              /*Container(
-                child: AspectRatio(
-                  aspectRatio: 1 / 1, //aspect ratio for Image
-                  child: Image(
-                    image: AssetImage('assets/index.jpg'),
-
-                    fit: BoxFit.cover, //fill type of image inside aspectRatio
-                  ),
-                ),
-                height: 60,
-                width: 60,
-              )*/
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -141,8 +129,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(width: 10),
                     Text(
                       item,
-                      style: const TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black, fontSize: 15),
                     ),
+                    Spacer(),
+                    Icon(
+                      Icons.keyboard_arrow_right_sharp,
+                    )
                   ]),
                 ),
               ),
