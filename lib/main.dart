@@ -30,20 +30,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // ignore: unused_field
-  int _counter = 0;
   var arr = [
     "Herzlich Wilkommen",
     "Sixtinische Madonna",
     "Das Schokoladenmädchen",
     "Wegbeschreibung 1"
   ];
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,14 +102,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             for (var item in arr)
+              /*Container(
+                child: AspectRatio(
+                  aspectRatio: 1 / 1, //aspect ratio for Image
+                  child: Image(
+                    image: AssetImage('assets/index.jpg'),
+
+                    fit: BoxFit.cover, //fill type of image inside aspectRatio
+                  ),
+                ),
+                height: 60,
+                width: 60,
+              )*/
               Container(
                 width: double.infinity,
-                child: ElevatedButton.icon(
-                  icon: const Icon(
-                    Icons.signpost_outlined,
-                    color: Colors.orange,
-                    size: 30.0,
-                  ),
+                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     textStyle: const TextStyle(fontSize: 20),
                     backgroundColor: Colors.white,
@@ -127,10 +126,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   onPressed: () {},
-                  label: Text(
-                    item,
-                    style: const TextStyle(color: Colors.black),
-                  ),
+                  child: Row(children: [
+                    Container(
+                      //aspect ratio for Image
+                      child: Image(
+                        image: AssetImage('assets/index.jpg'),
+
+                        fit: BoxFit
+                            .cover, //fill type of image inside aspectRatio
+                      ),
+                      height: 60,
+                      width: 60,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      item,
+                      style: const TextStyle(color: Colors.black),
+                    ),
+                  ]),
                 ),
               ),
 
